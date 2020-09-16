@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+  <head>
+    <style>
+      body {
+        height: 300%;
+        box-sizing: content-box;
+      }
+
+      button {
+        margin:20px;
+      }
+      #capacolor {
+        text-align:center;
+        width: 90vw;
+        height: 200px;
+        margin: 2vw auto;
+        padding: 2vw;
+      }
+      #result {
+        background: #F99;
+        text-align:center;
+        width: 90vw;
+        margin: 2vw auto;
+        padding: 2vw;
+        height:30px;
+      }
+    </style>
+  <body>
+    <button id="button2">Run test SharedArrayBuffer</button>
+
+    <div id="result"></div>
+    <div id="capacolor">
+      <h4>Podemos comprobar si hay bloqueo en la página pulsando el boton 'Cambia' que cambiando de color esta capa</h4>
+      <button id="buttoncolor">Cambia</button>
+    </div>
+
+
+    <script src="cambiacolor.js"></script>
+    <script src="app2.js"></script>
+  </body>
+</html>
