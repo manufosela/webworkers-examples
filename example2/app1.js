@@ -10,4 +10,9 @@ for (let i = 0; i < 10; i++) {
   Atomics.store(sharedArray, i, 0);
   console.log(`The item at array index ${i} is 0 (main process)`);
 }
+
+worker.onmessage = (buffer) => {
+  console.log(`Actualizada la posición ${buffer.data.pos} con el valor ${Atomics.load(sharedArray, buffer.data.pos)}`);
+};
+
 worker.postMessage(sharedBuffer);

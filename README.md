@@ -27,3 +27,18 @@ Podemos comprobar que no hay bloqueos.
 
 En la app4.js se calcula usando web-workers, transferimos el array donde se almacena el resultado y además repartimos el cálculo en 4 web-workers.
 Podemos comprobar que aparte de no haber bloqueo, se mejora el tiempo de cálculo.
+
+## [Ejemplo2](https://manufosela.github.io/webworkers-examples/example2/index.html)
+
+En el ejemplo 2 vamos a usar SharedBuffer y Atomics.
+SharedBuffer nos permite compartir memoria entre el hilo principal y los workers, de manera que no tiene que hacer clones del array que se pasa.
+
+### app1
+
+En la app1.js simplemente enviamos un ArraySharedBuffer con todos los valores a 0 y en worker los cambia al cuadrado del indice del array.
+Usa un setTimeout para hacerlo en diferido.
+Se puede comprobar que SharedArray tiene un valor difente conforme pasa el tiempo.
+
+### app2
+
+En la app2.js volvemos a calcular los numeros primos comprendidos entre 2 y 10485760, pero esta vez en vez de enviar el array que se va completando con un 1 en la posición donde se encuentra un número primo, se utiliza un SharedArray, evitando el clonado.
