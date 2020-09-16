@@ -1,6 +1,6 @@
 # Ejemplos de Web-Workers
 
-## Ejemplo1
+## [Ejemplo1](https://manufosela.github.io/webworkers-examples/example1/index.html)
 
 En el ejemplo 1 se calcula, con varias estrategias, todos los números primos entre 2 y 10485760.
 
