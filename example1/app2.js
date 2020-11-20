@@ -9,7 +9,7 @@ function runTest2() {
     view.set(new Uint8Array(msg.data.buffer), msg.data.buffer);
     performance.mark('testEnd');
     performance.measure('runTest', 'testStart', 'testEnd');
-    const timeTaken = performance.getEntriesByName('runTest')[0].duration;
+    const timeTaken = performance.getEntriesByName('runTest').slice(-1)[0].duration;
     document.getElementById('result').innerHTML = `Terminado. Encontrados ${msg.data.numPrimes} números primos en ${timeTaken / 1000} s`;
     console.log(msg.data.numPrimes, view);
     view.set(new Uint8Array(buffer), 0);
