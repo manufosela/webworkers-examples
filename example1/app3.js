@@ -8,7 +8,7 @@ function runTest3() {
   worker.onmessage = function(msg) {
     performance.mark('testEnd');
     performance.measure('runTest', 'testStart', 'testEnd');
-    const timeTaken = performance.getEntriesByName('runTest')[0].duration;
+    const timeTaken = performance.getEntriesByName('runTest').slice(-1)[0].duration;
     document.getElementById('result').innerHTML = `Terminado. Encontrados ${msg.data.numPrimes} números primos en ${timeTaken / 1000} s`;
     console.log(msg.data.numPrimes, msg.data.buffer);
   };
