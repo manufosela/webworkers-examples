@@ -19,7 +19,7 @@ function runTest4() {
       if (msg.data.offset + msg.data.length === buffer.byteLength) {
         performance.mark('testEnd');
         performance.measure('runTest', 'testStart', 'testEnd');
-        var timeTaken = performance.getEntriesByName('runTest')[0].duration;
+        const timeTaken = performance.getEntriesByName('runTest').slice(-1)[0].duration;
         document.getElementById('result').innerHTML = `Terminado. Encontrados ${primesFound} números primos en ${timeTaken / 1000} s`;
         console.log(primesFound, view);
       }
